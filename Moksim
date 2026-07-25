@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moksi</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#111;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    width:350px;
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    margin-top:15px;
+}
+
+button{
+    margin-top:10px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#00c853;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00a844;
+}
+
+#cevap{
+    margin-top:20px;
+    font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<h1>🤖 Moksi</h1>
+
+<p>Merhaba! Ben Moksi.</p>
+
+<input id="userInput" type="text" placeholder="Bir şey yaz...">
+
+<button onclick="konus()">Gönder</button>
+
+<p id="cevap"></p>
+
+</div>
+
+<script>
+
+function konus(){
+
+let mesaj=document.getElementById("userInput").value.trim();
+
+if(mesaj===""){
+document.getElementById("cevap").innerHTML="⚠️ Lütfen bir şey yaz.";
+return;
+}
+
+document.getElementById("cevap").innerHTML="🤖 Moksi: Sen dedin ki <b>"+mesaj+"</b>";
+
+}
+
+document.getElementById("userInput").addEventListener("keypress",function(e){
+if(e.key==="Enter"){
+konus();
+}
+});
+
+</script>
+
+</body>
+</html>
